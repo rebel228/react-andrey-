@@ -1,5 +1,19 @@
+```
+pnpm i
+```
+or 
+```
+pnpm i
+```
 
-`pnpm i`
-`npm run dev`
-`npm run lint`
-`npm run fix`
+```
+npm run dev
+```
+
+```
+npm run lint
+```
+
+```
+npm run fix
+```

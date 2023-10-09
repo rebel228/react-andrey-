@@ -1,0 +1,36 @@
+.container {
+  border: 1px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 2rem;
+  padding: 10px;
+}
+
+.cardImgBlock {
+  aspect-ratio: 1;
+  overflow: hidden;
+  display: flex;
+}
+
+.cardImg {
+  width: 100%;
+  object-fit: cover;
+}
+
+.details {
+  display: flex;
+  padding: 8px;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+.bigger {
+  font-size: 2rem;
+}
+
+.id {
+  align-self: flex-end;
+}

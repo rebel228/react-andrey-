@@ -1,0 +1,22 @@
+export type Products = Product[] | undefined;
+
+export interface ApiData {
+  products: Products;
+  total: number;
+  skip: 0;
+  limit: 0;
+}
+
+export interface Product {
+  brand: string;
+  category: string;
+  description: string;
+  discountPercentage: number;
+  id: number;
+  images: string[];
+  price: number;
+  rating: number;
+  stock: number;
+  thumbnail: string;
+  title: string;
+}
