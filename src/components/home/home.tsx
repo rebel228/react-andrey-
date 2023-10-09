@@ -33,6 +33,7 @@ class Home extends React.Component<Record<never, never>, State> {
 
   onChangeHandler = (e: { target: { value: string } }) => {
     const inputValue = e.target.value.trim();
+
     this.setState({ inputValue });
   };
 
@@ -47,19 +48,12 @@ class Home extends React.Component<Record<never, never>, State> {
   render() {
     return (
       <main className={s.container}>
-        <Search searchState={this.state.inputValue} onSearchClick={onSearchClick} />
-        <div className={s.searchContainer}>
-          <input
-            type="text"
-            className={s.searchInput}
-            placeholder={'Search for product name'}
-            onChange={this.onChangeHandler}
-            value={this.state.inputValue}
-          />
-          <button className={s.searchBtn} onClick={this.onSearchClick}>
-            search
-          </button>
-        </div>
+        <Search
+          searchState={this.state.inputValue}
+          onSearchClick={this.onSearchClick}
+          onChangeHandler={this.onChangeHandler}
+          inputValue={this.state.inputValue}
+        />
         <Cards products={this.state.products} />
       </main>
     );

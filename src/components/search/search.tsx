@@ -1,9 +1,12 @@
-import s from './card.module.css';
+import s from './search.module.css';
 import React from 'react';
 import { Product } from '../../types/api-types';
 
 interface Props {
-  product: Product;
+  inputValue: string;
+  searchState: string;
+  onSearchClick: () => void;
+  onChangeHandler: (e: { target: { value: string } }) => void;
 }
 
 interface State {
@@ -21,20 +24,18 @@ export default class Search extends React.Component<Props, State> {
 
   render() {
     return (
-      <li className={s.container}>
-        <div className={s.cardImgBlock}>
-          <img className={s.cardImg} src={this.props.product.images[0]} alt="" />
-        </div>
-        <div className={s.details}>
-          <div className={s.title}>{this.props.product.title}</div>
-          <div className={s.bigger}>${this.props.product.price}</div>
-          <div>Discount - {this.props.product.discountPercentage.toFixed()}%</div>
-          <div>Brand: {this.props.product.brand}</div>
-          <div>Category: {this.props.product.category}</div>
-          <div>Rating: {this.props.product.rating}</div>
-          <div className={s.id}>id: {this.props.product.id}</div>
-        </div>
-      </li>
+      <div className={s.container}>
+        <input
+          type="text"
+          className={s.searchInput}
+          placeholder={'Search for product name'}
+          onChange={this.props.onChangeHandler}
+          value={this.props.inputValue}
+        />
+        <button className={s.searchBtn} onClick={this.props.onSearchClick}>
+          search
+        </button>
+      </div>
     );
   }
 }

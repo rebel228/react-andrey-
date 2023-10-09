@@ -10,7 +10,7 @@ interface Props {
 export default class Cards extends React.Component<Props> {
   render() {
     return (
-      <ul className={s.cardsList}>
+      <ul className={s.container}>
         {this.props.products &&
           this.props.products?.length > 0 &&
           this.props?.products.map((product, index) => <Card key={index} product={product} />)}
