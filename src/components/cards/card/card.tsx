@@ -11,14 +11,6 @@ interface State {
 }
 
 export default class Card extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-
-    this.state = {
-      product: undefined,
-    };
-  }
-
   render() {
     return (
       <li className={s.container}>

@@ -5,10 +5,12 @@ import { Products } from '../../types/api-types';
 import { setLsString, getLsString } from '../../modules/helpers/localStorage';
 import Cards from '../cards/cards';
 import Search from '../search/search';
+import Loader from '../loader/loader';
 
 interface State {
   products: Products;
   inputValue: string;
+  isLoading: boolean;
 }
 
 class Home extends React.Component<Record<never, never>, State> {
@@ -18,13 +20,18 @@ class Home extends React.Component<Record<never, never>, State> {
     this.state = {
       products: undefined,
       inputValue: getLsString('cardsFilterInput17'),
+      isLoading: true,
     };
   }
 
-  componentDidMount() {
+  updateProducts = () => {
     getProducts(this.state.inputValue).then((apiData) => {
-      this.setState({ products: apiData.products });
+      this.setState({ products: apiData.products, isLoading: false });
     });
+  };
+
+  componentDidMount() {
+    this.updateProducts();
   }
 
   componentWillUnmount() {
@@ -33,16 +40,13 @@ class Home extends React.Component<Record<never, never>, State> {
 
   onChangeHandler = (e: { target: { value: string } }) => {
     const inputValue = e.target.value.trim();
-
     this.setState({ inputValue });
   };
 
   onSearchClick = () => {
+    this.setState({ isLoading: true });
     setLsString('cardsFilterInput17', this.state.inputValue);
-
-    getProducts(this.state.inputValue).then((apiData) => {
-      this.setState({ products: apiData.products });
-    });
+    this.updateProducts();
   };
 
   render() {
@@ -54,7 +58,11 @@ class Home extends React.Component<Record<never, never>, State> {
           onChangeHandler={this.onChangeHandler}
           inputValue={this.state.inputValue}
         />
-        <Cards products={this.state.products} />
+        {this.state.isLoading ? (
+          <Loader />
+        ) : (
+          <Cards products={this.state.products} isLoading={this.state.isLoading} />
+        )}
       </main>
     );
   }
