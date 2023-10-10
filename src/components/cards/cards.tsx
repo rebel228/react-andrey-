@@ -7,16 +7,14 @@ interface Props {
   products: Product[] | undefined;
 }
 
-export default class Cards extends React.Component<Props> {
-  render() {
-    return (
-      <>
-        <ul className={s.container}>
-          {this.props.products &&
-            this.props.products?.length > 0 &&
-            this.props?.products.map((product, index) => <Card key={index} product={product} />)}
-        </ul>
-      </>
-    );
-  }
-}
+const Cards: React.FC<Props> = ({ products }: Props) => {
+  return (
+    <ul className={s.container}>
+      {products &&
+        products?.length > 0 &&
+        products.map((product, index) => <Card key={index} product={product} />)}
+    </ul>
+  );
+};
+
+export default Cards;
