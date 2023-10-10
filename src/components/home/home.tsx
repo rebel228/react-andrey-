@@ -58,11 +58,7 @@ class Home extends React.Component<Record<never, never>, State> {
           onChangeHandler={this.onChangeHandler}
           inputValue={this.state.inputValue}
         />
-        {this.state.isLoading ? (
-          <Loader />
-        ) : (
-          <Cards products={this.state.products} isLoading={this.state.isLoading} />
-        )}
+        {this.state.isLoading ? <Loader /> : <Cards products={this.state.products} />}
       </main>
     );
   }
