@@ -6,11 +6,7 @@ interface Props {
   product: Product;
 }
 
-interface State {
-  product: Product | undefined;
-}
-
-export default class Card extends React.Component<Props, State> {
+export default class Cards extends React.Component<Props> {
   render() {
     return (
       <li className={s.container}>
