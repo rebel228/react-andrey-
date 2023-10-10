@@ -53,7 +53,6 @@ class Home extends React.Component<Record<never, never>, State> {
     return (
       <main className={s.container}>
         <Search
-          searchState={this.state.inputValue}
           onSearchClick={this.onSearchClick}
           onChangeHandler={this.onChangeHandler}
           inputValue={this.state.inputValue}
