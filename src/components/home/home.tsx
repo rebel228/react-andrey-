@@ -41,6 +41,7 @@ class Home extends React.Component<Record<never, never>, State> {
 
   onChangeHandler = (e: { target: { value: string } }) => {
     const inputValue = e.target.value.trim();
+
     this.setState({ inputValue });
   };
 
