@@ -1,12 +1,17 @@
-import React from 'react';
+import { Component } from 'react';
 
-import Home from './components/home/home';
+import ErrorBoundary from '@/components/error-boundary/error-boundary';
+import Home from '@/components/home/home';
 
-class App extends React.Component {
+import FallbackUI from './components/error-boundary/fallback-ui';
+
+class App extends Component {
   render() {
     return (
       <>
-        <Home />
+        <ErrorBoundary fallback={<FallbackUI />}>
+          <Home />
+        </ErrorBoundary>
       </>
     );
   }

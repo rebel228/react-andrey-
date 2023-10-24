@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 
 import { getProducts } from '../../modules/getProducts';
 import { getLsString, setLsString } from '../../modules/helpers/localStorage';
@@ -14,7 +14,7 @@ interface State {
   isLoading: boolean;
 }
 
-class Home extends React.Component<Record<never, never>, State> {
+class Home extends Component<Record<never, never>, State> {
   constructor(props: Record<string, never>) {
     super(props);
 
