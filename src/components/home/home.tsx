@@ -53,9 +53,6 @@ class Home extends React.Component<Record<never, never>, State> {
   render() {
     return (
       <main className={s.container}>
-
-
-        
         <Search
           onSearchClick={this.onSearchClick}
           onChangeHandler={this.onChangeHandler}

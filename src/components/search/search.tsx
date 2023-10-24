@@ -1,5 +1,6 @@
-import s from './search.module.css';
 import React from 'react';
+
+import s from './search.module.css';
 
 interface Props {
   inputValue: string;

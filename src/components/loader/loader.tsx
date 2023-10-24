@@ -1,4 +1,5 @@
 import React from 'react';
+
 import s from './loader.module.css';
 
 interface Props {}

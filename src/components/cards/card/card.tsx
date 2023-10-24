@@ -1,6 +1,7 @@
-import s from './card.module.css';
 import React from 'react';
+
 import { Product } from '../../../types/api-types';
+import s from './card.module.css';
 
 interface Props {
   product: Product;

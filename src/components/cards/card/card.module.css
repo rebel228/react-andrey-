@@ -1,14 +1,14 @@
 .container {
-  border: 1px solid black;
-  border-radius: 10px;
   overflow: hidden;
   font-size: 2rem;
+  border: 1px solid black;
+  border-radius: 10px;
 }
 
 .cardImgBlock {
-  aspect-ratio: 1;
   overflow: hidden;
   display: flex;
+  aspect-ratio: 1;
 }
 
 .cardImg {
@@ -18,8 +18,8 @@
 
 .details {
   display: flex;
-  padding: 8px;
   flex-direction: column;
+  padding: 8px;
 }
 
 .title {

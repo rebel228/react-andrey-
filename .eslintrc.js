@@ -8,13 +8,13 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:import/typescript',
   ],
+  root: true,
   env: {
     browser: true,
     es6: true,
     jest: true,
     node: true,
   },
-  root: true,
   parserOptions: {
     ecmaFeatures: {
       jsx: true,

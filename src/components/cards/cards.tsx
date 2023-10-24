@@ -1,7 +1,8 @@
-import { Product } from '../../types/api-types';
 import React from 'react';
-import s from './cards.module.css';
+
+import { Product } from '../../types/api-types';
 import Card from './card/card';
+import s from './cards.module.css';
 
 interface Props {
   products: Product[] | undefined;
