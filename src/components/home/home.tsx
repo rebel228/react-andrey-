@@ -1,11 +1,12 @@
-import s from './home.module.css';
 import React from 'react';
+
 import { getProducts } from '../../modules/getProducts';
+import { getLsString, setLsString } from '../../modules/helpers/localStorage';
 import { Products } from '../../types/api-types';
-import { setLsString, getLsString } from '../../modules/helpers/localStorage';
 import Cards from '../cards/cards';
-import Search from '../search/search';
 import Loader from '../loader/loader';
+import Search from '../search/search';
+import s from './home.module.css';
 
 interface State {
   products: Products;
@@ -52,6 +53,9 @@ class Home extends React.Component<Record<never, never>, State> {
   render() {
     return (
       <main className={s.container}>
+
+
+        
         <Search
           onSearchClick={this.onSearchClick}
           onChangeHandler={this.onChangeHandler}
