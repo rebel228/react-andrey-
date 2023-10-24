@@ -48,6 +48,9 @@ class Home extends React.Component<Record<never, never>, State> {
     this.setState({ isLoading: true });
     setLsString('cardsFilterInput17', this.state.inputValue);
     this.updateProducts();
+
+
+
   };
 
   render() {
