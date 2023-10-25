@@ -6,7 +6,7 @@ interface State {
   throwError: boolean;
 }
 
-class ErrorBtn extends Component<object, State> {
+class RepairBtn extends Component<object, State> {
   constructor(props: object) {
     super(props);
     this.state = { throwError: false };
@@ -19,10 +19,10 @@ class ErrorBtn extends Component<object, State> {
 
     return (
       <button className={s.container} onClick={() => this.setState({ throwError: true })}>
-        Trigger Error
+        Click here to repair the apps
       </button>
     );
   }
 }
 
-export default ErrorBtn;
+export default RepairBtn;

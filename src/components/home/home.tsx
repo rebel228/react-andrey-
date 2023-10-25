@@ -16,8 +16,8 @@ interface State {
   isLoading: boolean;
 }
 
-class Home extends Component<Record<never, never>, State> {
-  constructor(props: Record<string, never>) {
+class Home extends Component<object, State> {
+  constructor(props: object) {
     super(props);
 
     this.state = {

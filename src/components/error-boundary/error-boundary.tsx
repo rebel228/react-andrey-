@@ -22,7 +22,7 @@ class ErrorBoundary extends Component<Props, State> {
   static getDerivedStateFromError(error: Error): State {
     console.error(error);
 
-    return { errorInfo: error, hasError: true };
+    return { error: null, errorInfo: null, hasError: true };
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
@@ -36,7 +36,7 @@ class ErrorBoundary extends Component<Props, State> {
   }
 
   render() {
-    if (this.state.errorInfo) {
+    if (this.state.hasError) {
       {
         console.log(this.state.hasError);
       }
