@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 
 import s from './loader.module.css';
 
@@ -6,7 +6,7 @@ interface Props {}
 
 interface State {}
 
-export default class Loader extends React.Component<Props, State> {
+export default class Loader extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
 

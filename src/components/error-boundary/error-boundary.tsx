@@ -1,40 +1,49 @@
 import { Component, ErrorInfo, ReactNode } from 'react';
 
+import FallbackUI from '@/components/error-boundary/fallback-ui';
+
 interface Props {
-  fallback: JSX.Element;
-  children: JSX.Element;
+  children: ReactNode;
 }
 
 interface State {
   hasError: boolean;
-  error: Error | null;
   errorInfo: ErrorInfo | null;
+  error: Error | null;
 }
 
 class ErrorBoundary extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
 
-    this.state = {
-      hasError: false,
-      error: null,
-      errorInfo: null,
-    };
+    this.state = { hasError: false, errorInfo: null, error: null };
   }
 
   static getDerivedStateFromError(error: Error): State {
-    return { hasError: true, error, errorInfo: null };
+    console.error(error);
+
+    return { errorInfo: error, hasError: true };
   }
 
-  componentDidCatch(error: Error, errorInfo: React.ErrorInfo): void {
-    this.setState({ error, errorInfo });
-
+  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     console.error(error, errorInfo);
+
+    this.setState({
+      error: error,
+      errorInfo: errorInfo,
+      hasError: true,
+    });
   }
 
-  render(): ReactNode {
-    if (this.state.hasError) {
-      return this.props.fallback || <div>Error!</div>;
+  render() {
+    if (this.state.errorInfo) {
+      {
+        console.log(this.state.hasError);
+      }
+      return <FallbackUI />;
+    }
+    {
+      console.log(this.state.hasError);
     }
 
     return this.props.children;

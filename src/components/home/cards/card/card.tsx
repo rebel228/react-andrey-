@@ -1,13 +1,14 @@
-import React from 'react';
+import { Component } from 'react';
 
-import { Product } from '../../../types/api-types';
+import { Product } from '@/types/api-types';
+
 import s from './card.module.css';
 
 interface Props {
   product: Product;
 }
 
-export default class Cards extends React.Component<Props> {
+export default class Cards extends Component<Props> {
   render() {
     return (
       <li className={s.container}>

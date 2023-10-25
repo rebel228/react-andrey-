@@ -1,6 +1,7 @@
-import React from 'react';
+import { Component } from 'react';
 
-import { Product } from '../../types/api-types';
+import { Product } from '@/types/api-types';
+
 import Card from './card/card';
 import s from './cards.module.css';
 
@@ -8,7 +9,7 @@ interface Props {
   products: Product[] | undefined;
 }
 
-export default class Cards extends React.Component<Props> {
+export default class Cards extends Component<Props> {
   render() {
     return (
       <ul className={s.container}>

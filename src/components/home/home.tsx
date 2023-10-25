@@ -1,11 +1,13 @@
 import { Component } from 'react';
 
-import { getProducts } from '../../modules/getProducts';
-import { getLsString, setLsString } from '../../modules/helpers/localStorage';
-import { Products } from '../../types/api-types';
-import Cards from '../cards/cards';
-import Loader from '../loader/loader';
-import Search from '../search/search';
+import Cards from '@/components/home/cards/cards';
+import ErrorBtn from '@/components/home/error-btn/error-btn';
+import Loader from '@/components/home/loader/loader';
+import Search from '@/components/home/search/search';
+import { getProducts } from '@/modules/getProducts';
+import { getLsString, setLsString } from '@/modules/helpers/localStorage';
+import { Products } from '@/types/api-types';
+
 import s from './home.module.css';
 
 interface State {
@@ -54,6 +56,7 @@ class Home extends Component<Record<never, never>, State> {
   render() {
     return (
       <main className={s.container}>
+        <ErrorBtn />
         <Search
           onSearchClick={this.onSearchClick}
           onChangeHandler={this.onChangeHandler}

@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 
 import s from './search.module.css';
 
@@ -8,7 +8,7 @@ interface Props {
   onChangeHandler: (e: { target: { value: string } }) => void;
 }
 
-export default class Search extends React.Component<Props> {
+export default class Search extends Component<Props> {
   render() {
     return (
       <div className={s.container}>
