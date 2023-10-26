@@ -26,8 +26,6 @@ class ErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error(error, errorInfo);
-
     this.setState({
       error: error,
       errorInfo: errorInfo,
@@ -37,13 +35,7 @@ class ErrorBoundary extends Component<Props, State> {
 
   render() {
     if (this.state.hasError) {
-      {
-        console.log(this.state.hasError);
-      }
       return <FallbackUI />;
-    }
-    {
-      console.log(this.state.hasError);
     }
 
     return this.props.children;
