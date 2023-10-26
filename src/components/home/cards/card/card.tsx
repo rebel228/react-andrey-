@@ -13,7 +13,7 @@ export default class Cards extends Component<Props> {
     return (
       <li className={s.container}>
         <div className={s.cardImgBlock}>
-          <img className={s.cardImg} src={this.props.product.images[0]} alt="" />
+          <img alt="" className={s.cardImg} src={this.props.product.images[0]} />
         </div>
         <div className={s.details}>
           <div className={s.title}>{this.props.product.title}</div>

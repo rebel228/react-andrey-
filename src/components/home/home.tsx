@@ -58,9 +58,9 @@ class Home extends Component<object, State> {
       <main className={s.container}>
         <ErrorBtn />
         <Search
-          onSearchClick={this.onSearchClick}
-          onChangeHandler={this.onChangeHandler}
           inputValue={this.state.inputValue}
+          onChangeHandler={this.onChangeHandler}
+          onSearchClick={this.onSearchClick}
         />
         {this.state.isLoading ? <Loader /> : <Cards products={this.state.products} />}
       </main>

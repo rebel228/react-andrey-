@@ -31,6 +31,7 @@ module.exports = {
     'simple-import-sort',
   ],
   rules: {
+    'react/jsx-sort-props': 'warn',
     'simple-import-sort/imports': 'warn',
     'simple-import-sort/exports': 'error',
     'react-hooks/rules-of-hooks': 'error',
