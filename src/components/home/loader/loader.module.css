@@ -1,13 +1,3 @@
-@keyframes spinner {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 .container {
   display: flex;
   align-items: center;
@@ -22,6 +12,16 @@
   align-items: center;
   justify-content: center;
   height: 350px;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .loadingSpinner {
