@@ -4,9 +4,9 @@ import Cards from '@/components/home/cards/cards';
 import ErrorBtn from '@/components/home/error-btn/error-btn';
 import Loader from '@/components/home/loader/loader';
 import Search from '@/components/home/search/search';
-import { getProducts } from '@/modules/getProducts';
-import { getLsString, setLsString } from '@/modules/helpers/localStorage';
-import { Products } from '@/types/api-types';
+import { Products } from '@/modules/api-types';
+import { getProducts } from '@/modules/get-products';
+import { getLsString, setLsString } from '@/modules/local-storage';
 
 import s from './home.module.css';
 
