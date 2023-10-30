@@ -5,7 +5,7 @@ pnpm i
 or
 
 ```
-pnpm i
+npm i
 ```
 
 ```

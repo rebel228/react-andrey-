@@ -1,6 +1,6 @@
 import { Component } from 'react';
 
-import { Product } from '@/types/api-types';
+import { Product } from '@/modules/api-types';
 
 import s from './card.module.css';
 

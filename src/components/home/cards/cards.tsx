@@ -1,8 +1,8 @@
 import { Component } from 'react';
 
-import { Product } from '@/types/api-types';
+import Card from '@/components/home/cards/card/card';
+import { Product } from '@/modules/api-types';
 
-import Card from './card/card';
 import s from './cards.module.css';
 
 interface Props {
